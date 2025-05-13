@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -9,7 +10,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-24 bg-background">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center lg:max-w-5xl lg:mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -68,3 +69,4 @@ export default function AboutSection() {
     </section>
   );
 }
+
