@@ -10,16 +10,25 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-24 bg-background">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 items-center lg:max-w-5xl lg:mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            About AuraWatch
+          </h2>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start lg:max-w-5xl lg:mx-auto"> {/* Changed items-center to items-start */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
-              About AuraWatch
-            </h2>
             <p className="text-lg text-muted-foreground mb-4">
               AuraWatch is born from a commitment to fostering a safer and more authentic digital landscape. In an era of rapid content generation and sophisticated manipulation techniques, we recognized the critical need for accessible tools to identify harmful content and verify media integrity.
             </p>
@@ -69,4 +78,3 @@ export default function AboutSection() {
     </section>
   );
 }
-
